@@ -32,7 +32,9 @@ class LibroController extends Controller
      */
     public function show(Libro $libro)
     {
+        $libro->load('categorias');
         return response()->json(['libro' => $libro], Response::HTTP_OK);
+       
     }
 
     /**

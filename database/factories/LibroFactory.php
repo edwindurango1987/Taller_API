@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Categoria;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -27,6 +28,7 @@ class LibroFactory extends Factory
             'isbn' => $this->faker->isbn13(),
             'disponibilidad' => $this->faker->randomElement(['Disponible', 'Prestado', 'En Reparacion', 'Otro']),
             'ubicacion' => $this->faker->word(),
+            'fk_id_categoria' => $this->faker->numberBetween(1, 10),
         ];
     }
 }

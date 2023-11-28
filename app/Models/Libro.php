@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Libro extends Model
 {
@@ -22,5 +23,11 @@ class Libro extends Model
         'isbn',
         'disponibilidad',
         'ubicacion',
+        'fk_id_categoria',
     ];
+
+    public function categorias(): BelongsTo
+    {
+        return $this->belongsTo(Categoria::class, 'fk_id_categoria', 'id_categoria');
+    }
 }

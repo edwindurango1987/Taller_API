@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Categoria;
 use Illuminate\Database\Seeder;
 use App\Models\Libro;
 use App\Models\User;
@@ -21,6 +23,8 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
+
+        //Categoria::factory()->count(10)->create();
         Libro::factory()->count(30)->create();
         User::factory()->count(10)->create();
     }
